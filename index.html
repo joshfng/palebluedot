@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pale Blue Dot - Enjoy a real-time feed of the ISS HD Earth Viewing Experiment</title>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://palebluedot.io/" />
+	<meta property="og:title" content="Pale Blue Dot - Enjoy a real-time feed of the ISS HD Earth Viewing Experiment"/>
+	<meta property="og:site_name" content="Pale Blue Dot"/>
+	<meta name="description" content="Pale Blue Dot is a real-time feed of the ISS HD Earth Viewing Experiment" />
+	<meta property="og:description" content="Pale Blue Dot is a real-time feed of the ISS HD Earth Viewing Experiment" />
+	<!-- <meta property="og:image" content="img/hyperlax-logo-facebook-2.png" /> -->
+	<meta name="keyword" content="pale blue dot, iss, iss live feed, space station">
+	<meta charset="UTF-8" />
+	<meta name="google" content="notranslate" />
+	<meta http-equiv="Content-Language" content="en_US" />
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="http://vjs.zencdn.net/5.18.4/video-js.css" rel="stylesheet">
+	<script src="//use.typekit.net/bvp2tss.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-15130161-15', 'auto');
+	  ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<div class="flexcontainer">
+		<div class="video-box" id="vid-expand">
+      <!-- <video
+        id="live_and_recorded"
+        class="video-js vjs-default-skin"
+        style="display: none; position: relative; top: 50%; transform: translateY(-50%);"
+        muted
+        controls
+        autoplay
+        width="100%" height="100%"
+        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=ddFvjfvPnqk"}] }'
+      >
+    </video> -->
+      <div id="live_and_recorded"></div>
+      <iframe id="live" style="display: none;" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>
+      <iframe id="onboard" style="display: none;" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>
+		</div>
+		<div class="flexitem">
+			<div class="nav">
+				<ul class="nav-items">
+					<li class="home-nav selected"><a href="#"><i class="nav-icon"></i><span>Pale Blue Dot</span></a>
+					<li class="location-nav"><a href="#"><i class="fa fa-map-marker fa-lg"></i><span>location</span></a>
+					<li class="music-nav"><a href="#"><i class="fa fa-music fa-lg"></i><span>music</span></a>
+          <li class="video-nav"><a href="#"><i class="fa fa-video-camera fa-lg"></i><span>video</span></a></li><a href="http://twitter.com/joshfng" id="twitter" target="_blank"><i class="fa fa-twitter fa-lg"></i><span>@joshfng</span></a>
+					<!-- <li class="about-nav"><a href="#"><i class="fa fa-info fa-lg"></i><span>about</span></a></li> -->
+				</ul>
+			</div>
+			<div class="home-page active-page">
+				<div class="content-box">
+					<div class="content-animation">
+						<div class="container">
+							<div class="main-box">
+								<div class="logo">
+									<img class="logo-img" src="img/earth.png" alt="pale-blue-dot-logo">
+								</div>
+								<div class="description">
+									<h1 class="tagline">Live feed of the ISS HD Earth Viewing Experiment paired with relaxing music.</h1>
+									<ul class="instructions">
+										<li>SIT BACK</li>
+										<li>&bull;</li>
+										<li>RELAX</li>
+										<li>&bull;</li>
+										<li>ENJOY THE MUSIC</li>
+									</ul>
+								</div>
+								<div class="start">
+									<div class="hit-me">
+										<i class="fa fa-play fa-2x"></i><h1>Let's Go!</h1>
+									</div>
+									<p><span>Start without music</span></p>
+								</div>
+								<div class="spinner-container">
+									<div class="spinner">
+									  <div class="rect1"></div>
+									  <div class="rect2"></div>
+									  <div class="rect3"></div>
+									  <div class="rect4"></div>
+									  <div class="rect5"></div>
+									</div>
+								</div>
+								<div class="social-share">
+                  <p>Video feeds courtesy of <a href="https://www.nasa.gov/" target="_blank">NASA</a> and <a href="https://www.youtube.com/watch?v=ddFvjfvPnqk" target="_blank">Space Videos</a></p><br>
+									<p>cool enough to share?</p>
+									<a class="social-popup" href="https://twitter.com/intent/tweet/?text=Enjoy%20a%20real-time%20feed%20of%20the%20ISS%20High%20Definition%20Earth%20Viewing%20Experiment&url=http%3A%2F%2Fpalebluedot.io&via=joshfng" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+									<a class="social-popup" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpalebluedot.io%2F" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+                  <p style="margin-top: 40px;">Based on <a href="http://hyperlax.tv" target="_blank">Hyperlax</a> by <a href="https://twitter.com/taykcrane" target="_blank">@taykcrane</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="location-page">
+				<div class="content-box">
+					<div class="content-animation">
+						<div class="container">
+							<div class="top-box">
+								<div class="location-group">
+                  <div class="location">
+										<i class="fa fa-map-marker fa-3x"></i>
+										<p class="location-text"></p>
+									</div>
+								</div>
+							</div>
+							<div class="bottom-box">
+								<div id="myMap"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="music-page">
+				<div class="content-box">
+					<div class="content-animation">
+						<div class="container">
+							<div class="top-box">
+								<p class="music-sum">Pale Blue Dot is best when watched with relaxing and chill music in the background. Choose from the playlists below, courtesy of <a href="http://soundcloud.com">Soundcloud</a>.</p>
+							</div>
+							<div class="bottom-box">
+								<ul class="playlist-choices">
+                  <li class="selected" id="5281179"><span class="playlist-name">Mellow</span></li>
+                  <li id="59605041"><span class="playlist-name">Interstellar Soundtrack</span></li>
+									<li id="9875415"><span class="playlist-name">Chill</span></li>
+									<li id="6870254"><span class="playlist-name">Electronic</span></li>
+									<li id="14420313"><span class="playlist-name">Piano</span></li>
+									<li id="51184003"><span class="playlist-name">Ambient</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+      <div class="video-page">
+				<div class="content-box">
+					<div class="content-animation">
+						<div class="container">
+              <div class="top-box">
+								<p class="music-sum">Select the live feed you'd like to watch. Live &amp; Onboard are dark for half the time as the ISS goes to the night side of Earth.</p>
+							</div>
+							<div class="bottom-box">
+								<ul class="video-choices">
+                  <li class="selected" id="live_and_recorded"><span class="playlist-name">Live + Pre-recorded mix</span></li>
+                  <li id="live"><span class="playlist-name">Earth View</span></li>
+                  <li id="onboard"><span class="playlist-name">Onboard</span></li>
+								</ul>
+							</div>
+            </div>
+          </div>
+        </div>
+      </div>
+			<div class="about-page">
+				<div class="content-box">
+					<div class="content-animation">
+						<div class="container">
+							<div class="top-box">
+								<div class="about-content">
+									<p>Pale Blue Dot is a modified version of <a href="http://hyperlax.tv" target="_blank">Hyperlax</a> by <a href="https://twitter.com/taykcrane" target="_blank">@taykcrane</a>. Send him your thanks!</p>
+                  <p>If you want to contribute to Pale Blue Dot, please reach out to me <a href="https://twitter.com/joshfng" target="_blank">@joshfng</a></p>
+								</div>
+							</div>
+							<!-- <div class="bottom-box">
+								<p class="made">Made with <i class="fa fa-heart"></i> in NYC</p>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="attribution">
+				<p class="credit"></p>
+				<p class="timestamp"></p>
+			</div>
+			<div class="music-player">
+				<div class="container">
+					<div class="music-box">
+						<div class="volume"><i class="fa fa-volume-up fa-lg"></i></div><div class="music-pause-play"><i class="fa fa-pause fa-lg"></i></div><div class="music-next"><i class="fa fa-forward fa-lg"></i></div><div class="music-data"><div class="music-text-bg"><div class="music-text"><p class="title"></p><p class="uploader"></p></div></div><a href="#" class="sc-logo" target="_blank"><i class="fa fa-soundcloud"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay">
+		<div class="overlay-content">
+			<h1>Gah!</h1>
+			<p>Looks like you're using a browser or a device that doesn't work well with Pale Blue Dot. The site will only work on desktop/laptops (no mobile or tablet devices), and must be one of the below browsers. This is primarily due to the continuous video playback. But trust me, it's worth it!</p>
+			<ul>
+				<li><a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome, Version 32+</a></li>
+				<li><a href="https://www.mozilla.org/en-US/firefox/new/?scene=2#download-fx">Mozilla Firefox, Version 35+</a></li>
+				<li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer 11+</a></li>
+				<li><a href="https://support.apple.com/downloads/safari">Apple Safari, Version 8+</a></li>
+				<li></li>
+			</ul>
+			<p>Think you're seeing this message in error? Please let me know at joshfng@gmail.com</p>
+		</div>
+	</div>
+
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYvvZfEiUoVm-Rs9q2cs3SKeP79uMG_d0"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="js/datamaps.js"></script>
+<script src="js/pause.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="js/soundmanager2-nodebug-jsmin.js"></script>
+<script src="http://connect.soundcloud.com/sdk.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trunk8/1.3.3/trunk8.js"></script>
+<script src="http://vjs.zencdn.net/5.18.4/video.js"></script>
+<script src="/js/youtube.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="js/ResizeSensor.js"></script>
+<script src="js/ElementQueries.js"></script>
+<script src="js/bowser.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
