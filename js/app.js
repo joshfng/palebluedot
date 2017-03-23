@@ -427,15 +427,18 @@ function switchPlaylist (playlistID) {
 }
 
 function switchVideo (videoID) {
-	//console.log(videoID);
-  // loop each element in video-box and hide
-  // show only selected on
-  $('.video-box').children().each(function () {
-    //console.log("hiding " + this)
-    $(this).hide();
-  });
+  // console.log(videoID);
+  $('.video-box').empty();
+  player = null;
 
-  $('#' + videoID).show();
+  if (videoID === 'live_and_recorded') {
+    $('.video-box').html('<div id="live_and_recorded"></div>');
+    onYouTubeIframeAPIReady();
+  } else if (videoID === 'live') {
+    $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+  } else if (videoID === 'onboard') {
+    $('.video-box').html('<iframe id="onboard" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+  }
 }
 
 //A bunch of functions related to the UI

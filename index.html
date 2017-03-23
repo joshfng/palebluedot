@@ -29,25 +29,18 @@
 
 	  ga('create', 'UA-15130161-15', 'auto');
 	  ga('send', 'pageview');
+
+    function ga_heartbeat(){
+      ga('send','event','pbd','heartbeat')
+      setTimeout(ga_heartbeat, 5*60*1000);
+    }
+    ga_heartbeat();
 	</script>
 </head>
 <body>
 	<div class="flexcontainer">
 		<div class="video-box" id="vid-expand">
-      <!-- <video
-        id="live_and_recorded"
-        class="video-js vjs-default-skin"
-        style="display: none; position: relative; top: 50%; transform: translateY(-50%);"
-        muted
-        controls
-        autoplay
-        width="100%" height="100%"
-        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=ddFvjfvPnqk"}] }'
-      >
-    </video> -->
       <div id="live_and_recorded"></div>
-      <iframe id="live" style="display: none;" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>
-      <iframe id="onboard" style="display: none;" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>
 		</div>
 		<div class="flexitem">
 			<div class="nav">
