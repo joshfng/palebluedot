@@ -42,6 +42,12 @@ $(document).ready(function () {
 		toggleMute();
 	})
 
+  //When the location toggle is turned off, stop displaying the location on top of the video
+	$(".onoffswitch-label").on("click", function () {
+    enabled = !$('#myonoffswitch').prop('checked');
+    toggleRotateFeeds(enabled);
+	})
+
 	//When a nav button is clicked, animate the appropriate page down
 	$(".nav-items li").on("click", function () {
 		selectedNav($(this));
@@ -135,6 +141,28 @@ $(document).ready(function () {
   // update iss location every 10 seconds
   setInterval(function() { setISSLocation(); }, 30000);
 });
+
+var feedTimer;
+
+function toggleRotateFeeds(enabled) {
+  if (!enabled) {
+    clearInterval(feedTimer);
+  } else {
+    feedTimer = setInterval(function() {
+      nextUp = $(".video-choices li.selected").next().attr('id')
+
+      if (nextUp == undefined) {
+        // we're at the end. Start at the top
+        nextUp = $(".video-choices li").first().attr('id')
+      }
+
+      //console.log('will rotate feed to ' + nextUp);
+  		switchVideo(nextUp);
+  		$(".video-choices li.selected").removeClass("selected");
+  		$(".video-choices li#" + nextUp).addClass("selected");
+    }, 120000)
+  }
+}
 
 var myBubble = [];
 var myMap;
