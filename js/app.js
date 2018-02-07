@@ -35,7 +35,7 @@ function onYouTubeIframeAPIReady() {
 
 $(document).ready(function () {
 	//Determines if browser is unsupported
-	// testBrowsers();
+	testBrowsers();
 
 	getPlaylist(5281179, true);
 
