@@ -1,7 +1,17 @@
 var player;
+var sourceEl;
+
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('live_and_recorded', {
-    videoId: 'ddFvjfvPnqk', // YouTube Video ID
+  if (sourceEl == 'live_and_recorded') {
+    videoId = 'ddFvjfvPnqk';
+  } else if (sourceEl == 'starman') {
+    videoId = 'aBr2kKAHN6M';
+  } else {
+    sourceEl = 'starman';
+    videoId = 'aBr2kKAHN6M';
+  }
+  player = new YT.Player(sourceEl, {
+    videoId: videoId, // YouTube Video ID
     width: '100%',               // Player width (in px)
     height: '100%',              // Player height (in px)
     playerVars: {
@@ -25,7 +35,7 @@ function onYouTubeIframeAPIReady() {
 
 $(document).ready(function () {
 	//Determines if browser is unsupported
-	testBrowsers();
+	// testBrowsers();
 
 	getPlaylist(5281179, true);
 
@@ -461,6 +471,11 @@ function switchVideo (videoID) {
 
   if (videoID === 'live_and_recorded') {
     $('.video-box').html('<div id="live_and_recorded"></div>');
+    sourceEl = 'live_and_recorded';
+    onYouTubeIframeAPIReady();
+  } else if (videoID === 'starman') {
+    $('.video-box').html('<div id="starman"></div>');
+    sourceEl = 'starman';
     onYouTubeIframeAPIReady();
   } else if (videoID === 'live') {
     $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
