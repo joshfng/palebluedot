@@ -5,10 +5,10 @@ function onYouTubeIframeAPIReady() {
   if (sourceEl == 'live_and_recorded') {
     videoId = 'ddFvjfvPnqk';
   } else if (sourceEl == 'starman') {
-    videoId = 'aBr2kKAHN6M';
+    videoId = 'UO3h4FBLWqY';
   } else {
     sourceEl = 'starman';
-    videoId = 'aBr2kKAHN6M';
+    videoId = 'UO3h4FBLWqY';
   }
   player = new YT.Player(sourceEl, {
     videoId: videoId, // YouTube Video ID
