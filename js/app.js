@@ -2,20 +2,19 @@ var player;
 var sourceEl;
 
 function onYouTubeIframeAPIReady() {
-  if (sourceEl == 'live_and_recorded') {
-    videoId = 'ddFvjfvPnqk';
+  if (sourceEl == 'starman') {
+    videoId = 'UO3h4FBLWqY';
   } else if (sourceEl == 'starman') {
     videoId = 'UO3h4FBLWqY';
   } else {
-    sourceEl = 'starman';
-    videoId = 'UO3h4FBLWqY';
+    sourceEl = 'live_and_recorded';
+    videoId = 'ddFvjfvPnqk';
   }
   player = new YT.Player(sourceEl, {
     videoId: videoId, // YouTube Video ID
     width: '100%',               // Player width (in px)
     height: '100%',              // Player height (in px)
     playerVars: {
-      autoplay: 1,        // Auto-play the video on load
       controls: 0,        // Show pause/play buttons in player
       showinfo: 0,        // Hide the video title
       modestbranding: 1,  // Hide the Youtube Logo
@@ -25,13 +24,16 @@ function onYouTubeIframeAPIReady() {
       iv_load_policy: 3,  // Hide the Video Annotations
       autohide: 0         // Hide video controls when playing
     },
-    events: {
-      onReady: function(e) {
-        e.target.mute();
-      }
+    events : {
+     'onReady' : onPlayerReady
     }
   });
 };
+
+function onPlayerReady(event) {
+  event.target.mute();
+  event.target.playVideo();
+}
 
 $(document).ready(function () {
 	//Determines if browser is unsupported
@@ -225,11 +227,6 @@ function updatesLocationText (position) {
 		//console.log(geoPosition);
 		reverseGeocode(geoPosition);
 	}
-	/*setTimeout(function () {
-		$(".location-overlay").animate({
-			"opacity": "0"
-		}, 3000)
-	}, 2000);*/
 }
 
 function updatesLocationMap (position) {
@@ -364,22 +361,30 @@ function scStopStream () {
 }
 
 function scTogglePause () {
-	currentSound.togglePause();
+  try {
+	   currentSound.togglePause();
+   } catch(err) {
+     
+   }
 }
 
 function musicPauseAndPlay () {
-	if (currentSound.paused) {
-		scTogglePause();
-		toMusicPauseButton();
-		//uses Pause JS library to resume the songProgress animation
-		$(".music-text-bg").resume();
-	} else {
-		scTogglePause();
-		toMusicPlayButton();
-		//uses Pause JS library to pause the songProgress animation
-		$(".music-text-bg").pause();
-		// //console.log("THIS BAD BOY PAUSED THE PROGRESS BAR");
-	}
+  try {
+    if (currentSound.paused) {
+      scTogglePause();
+      toMusicPauseButton();
+      //uses Pause JS library to resume the songProgress animation
+      $(".music-text-bg").resume();
+    } else {
+      scTogglePause();
+      toMusicPlayButton();
+      //uses Pause JS library to pause the songProgress animation
+      $(".music-text-bg").pause();
+      // //console.log("THIS BAD BOY PAUSED THE PROGRESS BAR");
+    }
+  } catch(err) {
+
+  }
 }
 
 function toMusicPauseButton () {
@@ -478,9 +483,9 @@ function switchVideo (videoID) {
     sourceEl = 'starman';
     onYouTubeIframeAPIReady();
   } else if (videoID === 'live') {
-    $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+    $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
   } else if (videoID === 'onboard') {
-    $('.video-box').html('<iframe id="onboard" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=true&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+    $('.video-box').html('<iframe id="onboard" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
   }
 }
 
