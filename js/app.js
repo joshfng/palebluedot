@@ -1,35 +1,3 @@
-var player;
-var sourceEl;
-
-function onYouTubeIframeAPIReady() {
-  sourceEl = 'live_and_recorded';
-  videoId = 'ddFvjfvPnqk';
-
-  player = new YT.Player(sourceEl, {
-    videoId: videoId, // YouTube Video ID
-    width: '100%',               // Player width (in px)
-    height: '100%',              // Player height (in px)
-    playerVars: {
-      controls: 0,        // Show pause/play buttons in player
-      showinfo: 0,        // Hide the video title
-      modestbranding: 1,  // Hide the Youtube Logo
-      loop: 1,            // Run the video in a loop
-      fs: 0,              // Hide the full screen button
-      cc_load_policy: 0, // Hide closed captions
-      iv_load_policy: 3,  // Hide the Video Annotations
-      autohide: 0         // Hide video controls when playing
-    },
-    events : {
-     'onReady' : onPlayerReady
-    }
-  });
-};
-
-function onPlayerReady(event) {
-  event.target.mute();
-  event.target.playVideo();
-}
-
 $(document).ready(function () {
 	//Determines if browser is unsupported
 	testBrowsers();
@@ -467,16 +435,11 @@ function switchPlaylist (playlistID) {
 function switchVideo (videoID) {
   // console.log(videoID);
   $('.video-box').empty();
-  player = null;
 
-  if (videoID === 'live_and_recorded') {
-    $('.video-box').html('<div id="live_and_recorded"></div>');
-    sourceEl = 'live_and_recorded';
-    onYouTubeIframeAPIReady();
-  } else if (videoID === 'live') {
-    $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+  if (videoID === 'live') {
+    $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui=1&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
   } else if (videoID === 'onboard') {
-    $('.video-box').html('<iframe id="onboard" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+    $('.video-box').html('<iframe id="onboard" src="http://www.ustream.tv/embed/9408562?html5ui=1&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
   }
 }
 
