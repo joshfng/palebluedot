@@ -313,7 +313,7 @@ var currentSound = "";
 var songPosition = 0;
 function getPlaylist (playlistID, onFirstMusicLoad) {
 	$.ajax({
-		url: "http://api.soundcloud.com/playlists/" + playlistID + ".json?client_id=0e790e28fcdf924f78f80375ad74fcb8",
+		url: "https://api.soundcloud.com/playlists/" + playlistID + ".json?client_id=0e790e28fcdf924f78f80375ad74fcb8",
 		dataType: "json",
 		type: "GET",
 	})
@@ -476,7 +476,7 @@ function switchVideo (videoID) {
   } else if (videoID === 'live') {
     $('.video-box').html('<iframe id="live" src="https://www.ustream.tv/embed/17074538?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
   } else if (videoID === 'onboard') {
-    $('.video-box').html('<iframe id="onboard" src="http://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
+    $('.video-box').html('<iframe id="onboard" src="https://www.ustream.tv/embed/9408562?html5ui&amp;autoplay=true&amp;controls=false&amp;volume=0.0" frameborder="0" allowfullscreen="" webkitallowfullscreen="" scrolling="no" width="100%" height="100%"></iframe>');
   }
 }
 

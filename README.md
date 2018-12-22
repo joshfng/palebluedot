@@ -1,3 +1,3 @@
 # Pale Blue Dot
 
-###### The source code for http://palebluedot.io
+###### The source code for https://palebluedot.io
