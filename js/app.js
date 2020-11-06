@@ -2,8 +2,7 @@ var player;
 var sourceEl;
 
 function onYouTubeIframeAPIReady() {
-  // sourceEl = 'live_and_recorded';
-  sourceEl = 'live';
+  sourceEl = 'live_and_recorded';
   videoId = 'ddFvjfvPnqk';
 
   player = new YT.Player(sourceEl, {
