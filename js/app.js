@@ -146,8 +146,8 @@ $(document).ready(function () {
 		}
 	}, 100);
 
-  // update iss location every 10 seconds
-  setInterval(function() { setISSLocation(); }, 30000);
+  // update iss location
+  setInterval(function() { setISSLocation(); }, 5000);
 });
 
 var feedTimer;
